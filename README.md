@@ -7,9 +7,15 @@ This repo includes everything you need to build a static website, deploy it to A
 - `yarn dev` to run a dev server
 - `yarn build` to build the project
 - `yarn deploy` to build and deploy the project (to a staging environment)
-- `yarn release` to build and deploy the project (to the production environment)
+- `yarn remove` Removes the staging environment 
 
-## How to clone this repo
+### TODO:
+- `yarn release` to build and deploy the project (to the production environment) (TODO)
+- `yarn remove:prod` Removes the production environment
+
+## Starting a new project
+
+
 
 
 ## Overview
@@ -64,4 +70,25 @@ The library will now be automatically built and cached.
 
 ## How to
 
+More config options in the [get lift repository](https://github.com/getlift/lift#constructs).
+
 ### Adding a domain / URL
+
+You can register the domain on route53 or use any other domain registration provider.
+
+First we need a valid https certificate.  This is assigned via the certificate ARN in `infrastructure/serverless.yml`
+
+```yml
+constructs:
+  landing:
+      # ...
+      domain: mywebsite.com
+      # ARN of an ACM certificate for the domain, registered in us-east-1
+      certificate: arn:aws:acm:us-east-1:123456615250:certificate/0a28e63d-d3a9-4578-9f8b-14347bfe8123
+```
+
+> [How to generate a HTTPS certificate](https://github.com/getlift/lift/blob/master/docs/static-website.md#https-certificate)
+
+Once the config is set, run `yarn deploy` and it should output the url of the cloudfront distribution as `xxx.cloudfront.net`.  Configure your DNS to point to `xxx.cloudfront.net` using a `CNAME` entry.
+
+
