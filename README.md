@@ -1,77 +1,50 @@
-# Turborepo starter
+# Code On Canvas Minimal Boilerplate
 
-This is an official Yarn v1 starter turborepo.
+This repo includes everything you need to build a static website, deploy it to AWS, and extend it with other AWS services.
 
-## What's inside?
+## Commands
 
-This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It includes the following packages/apps:
+- `yarn dev` to run a dev server
+- `yarn build` to build the project
+- `yarn deploy` to build and deploy the project (to a staging environment)
+- `yarn release` to build and deploy the project (to the production environment)
 
-### Apps and Packages
+## How it works
 
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+This repository is a multi-repo powered by (turborepo)[https://turborepo.org/] to help manage dependencies.  Basically apps or libs live in subfolders in the project root.
+Turborepo automatically builds and caches dependencies to reduce startup time, if a dependency changes it will rebuild the dependant applications.
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### Apps
 
-### Utilities
+Any app with a `dev` and `build` script in its `package.json` will be considered an app.  When running `yarn dev` or `yarn build` in the monorepo root it will run these commands for the apps as well.  Alternatively you can just run `yarn dev`/`yarn build` inside of an individual project.
 
-This turborepo has some additional tools already setup for you:
+### Libs
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+You can seperate code into their own libraries that can be shared across apps.
 
-## Setup
+If a package is a dependency of an **App** it will be considered a library.  There is no need to provide `build` or `dev` scripts as it will use the build system of the dependant **app** to bundle it.  To handle this, you must provide the entry point for the lib inside of its `project.json`
 
-This repository is used in the `npx create-turbo` command, and selected when choosing which package manager you wish to use with your monorepo (Yarn).
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-yarn run build
+```json
+{
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+}
 ```
 
-### Develop
+### Adding a library as a dependency to an application
 
-To develop all apps and packages, run the following command:
+Add a lib as a dependency to an app by adding it to the `dependencies` section of the **app**'s `project.json`
 
-```
-cd my-turborepo
-yarn run dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching (Beta)](https://turborepo.org/docs/features/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching (Beta) you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
+```json5
+{
+  "dependencies": {
+    "my-lib-name": "*" // Coresponds to a package at `/my-lib-name`
+  }
+}
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+The library will now be automatically built and cached.
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
+## How to
 
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Pipelines](https://turborepo.org/docs/features/pipelines)
-- [Caching](https://turborepo.org/docs/features/caching)
-- [Remote Caching (Beta)](https://turborepo.org/docs/features/remote-caching)
-- [Scoped Tasks](https://turborepo.org/docs/features/scopes)
-- [Configuration Options](https://turborepo.org/docs/reference/configuration)
-- [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
+### Adding a domain / URL
