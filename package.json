@@ -1,5 +1,5 @@
 {
-  "name": "turborepo-basic-shared",
+  "name": "coc-boilerplate",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
@@ -10,7 +10,8 @@
     "dev": "turbo run dev --parallel",
     "deploy": "turbo run deploy",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "remove-yes-im-sure": "turbo run remove"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.1",

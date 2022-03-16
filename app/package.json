@@ -1,11 +1,10 @@
 {
-  "name": "app2",
+  "name": "@coc-boilerplate/app",
   "private": true,
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "deploy": "npm run build",
     "preview": "vite preview"
   },
   "dependencies": {

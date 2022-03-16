@@ -3,16 +3,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "lib": ["DOM", "ESNext"],
-    "types": [
-      "vite/client",
-      "vite-plugin-pages",
-      "vite-plugin-pages/client",
-      "vite-plugin-vue-layouts/client"
-    ],
     "paths": {
       "~/*": ["src/*"],
       "@/*": ["src/*"]
-
     }
   },
   "include": ["src/**/*"],

@@ -1,4 +1,4 @@
-service: infrastructure
+service: coc-boilerplate-infrastructure
 frameworkVersion: '3'
 
 provider:
@@ -14,3 +14,12 @@ functions:
 plugins:
   - serverless-lift
   - serverless-bundle
+
+
+constructs:
+
+  # Include Lift constructs here
+
+  landing-page:
+      type: static-website
+      path: '../app/dist'

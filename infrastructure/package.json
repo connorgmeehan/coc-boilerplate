@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "deploy": "sls deploy"
+    "deploy": "sls deploy",
+    "remove": "sls remove"
   },
   "dependencies": {
+    "@coc-boilerplate/app": "*",
     "express": "^4.17.1",
     "serverless-http": "^2.7.0"
   },

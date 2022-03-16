@@ -14,7 +14,7 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "@monorepo/*": [
+      "@coc-boilerplate/*": [
         "*/src/index.ts"
       ]
     }

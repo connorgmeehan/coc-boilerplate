@@ -1,9 +1,5 @@
 {
-  "name": "vite-vue3-boilerplate",
-  "author": {
-    "name": "Rafael Takei",
-    "email": "rafaelytakei@gmail.com"
-  },
+  "name": "@coc-boilerplate/site",
   "license": "MIT",
   "version": "0.0.3",
   "scripts": {

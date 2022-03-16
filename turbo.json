@@ -5,7 +5,10 @@
       "outputs": ["dist/**"]
     },
     "deploy": {
-      "dependsOn": ["^pre-deploy", "^build"]
+      "dependsOn": ["^build"]
+    },
+    "remove": {
+      "dependsOn": ["^remove"]
     },
     "lint": {
       "outputs": []

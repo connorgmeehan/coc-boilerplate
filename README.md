@@ -1,4 +1,4 @@
-# Code On Canvas Minimal Boilerplate
+# Code On Canvas Extendible Boilerplate
 
 This repo includes everything you need to build a static website, deploy it to AWS, and extend it with other AWS services.
 
@@ -19,12 +19,12 @@ There are a few subfolders within this repo, some are project starters and other
 - `app/` Simple single page vue app.
 - `site/` A more complex, multi-page vue application, with server side rendering etc.
 - `infrastructure/` A serverless project, enhanced with [lift](https://github.com/getlift/lift) to deploy the site to AWS.
-  - Note: This is configured to deploy the `app/` but not the `site/` project.  If you want to deploy `site/` instead you should (TODO)
+  - Note: This is configured to deploy the `app/` but not the `site/` project.  If you want to deploy `site/` instead you should:
+    1. Update `infrastructure/package.json` to reference `@coc-boilerplate/site` instead of `@coc-boilerplate/app`
+    2. Update `infrastructure/serverless.yml` `constructs: -> landing-page: -> path:` to read `../site/dist` instead of `../app/dist`
 
 ### Other folders
-- `config/` Shared config for ESLint, Prettier, Styelint etc.
 - `shared/` An example of a shared lib that can be used in multiple apps/project starters
-
 
 ## How it works
 
