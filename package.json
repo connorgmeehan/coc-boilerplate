@@ -11,7 +11,7 @@
     "deploy": "turbo run deploy",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "remove-yes-im-sure": "turbo run remove"
+    "teardown": "turbo run teardown"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.1",

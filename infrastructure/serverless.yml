@@ -1,4 +1,4 @@
-service: coc-boilerplate-infrastructure
+service: infrastructure
 frameworkVersion: '3'
 
 provider:
