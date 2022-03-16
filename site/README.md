@@ -1,11 +1,51 @@
-# Vue 3 + Typescript + Vite
+# vite-vue3-boilerplate
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Boilerplate for Vue 3 using Vite and adding some plugins to bring some Nuxt-like features
+(e.g. auto-importing components and auto-routing setup)
 
-## Recommended IDE Setup
+## Installation
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+```
+npm i -g pnpm (in case you don't have pnpm installed - yarn/npm also work, but pnpm is recommended)
+pnpm i
+```
 
-## Type Support For `.vue` Imports in TS
+---
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+## Running a development server
+
+```
+pnpm dev
+```
+
+---
+
+## Features
+
+- ESLint ✔️
+- TypeScript ✔️
+- Auto-import components from `/src/components` with TS support✔️
+- Auto setup router for pages in `/src/pages` ✔️
+- Dynamic routes using `/src/pages/[slug].vue` ✔️
+- Nuxt-like layout setup ✔️
+- Store setup using [Pinia](https://pinia.esm.dev/)✔️
+- Auto-import plugins from `/src/plugins` ✔️
+
+---
+
+## How-to's
+
+### Store data persistance
+
+This boilerplate is currently setup to persist the data of the stores in the `storesToPersist`
+variable in `main.ts`, so if you need to persist data from a store, just add it to the array
+
+---
+
+## Why's
+
+### Pinia over Vuex
+
+- Better TypeScript support
+- No need for mutations
+- Seems to be a better match with Composition API

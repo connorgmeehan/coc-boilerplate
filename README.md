@@ -9,6 +9,23 @@ This repo includes everything you need to build a static website, deploy it to A
 - `yarn deploy` to build and deploy the project (to a staging environment)
 - `yarn release` to build and deploy the project (to the production environment)
 
+## How to clone this repo
+
+
+## Overview
+There are a few subfolders within this repo, some are project starters and others a examples of libs or config.  There's no harm in leaving libs in the project but you should delete any apps/project starters that you're not using.
+
+### Apps / Project starters
+- `app/` Simple single page vue app.
+- `site/` A more complex, multi-page vue application, with server side rendering etc.
+- `infrastructure/` A serverless project, enhanced with [lift](https://github.com/getlift/lift) to deploy the site to AWS.
+  - Note: This is configured to deploy the `app/` but not the `site/` project.  If you want to deploy `site/` instead you should (TODO)
+
+### Other folders
+- `config/` Shared config for ESLint, Prettier, Styelint etc.
+- `shared/` An example of a shared lib that can be used in multiple apps/project starters
+
+
 ## How it works
 
 This repository is a multi-repo powered by (turborepo)[https://turborepo.org/] to help manage dependencies.  Basically apps or libs live in subfolders in the project root.
