@@ -6,8 +6,8 @@ module.exports = {
     node: true,
   },
   extends: [
+    '@coc-boilerplate/eslint-config-coc',
     'plugin:vue/vue3-recommended',
-    'eslint:recommended',
     '@vue/prettier',
     '@vue/typescript/recommended',
   ],
