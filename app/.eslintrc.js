@@ -6,7 +6,7 @@ module.exports = {
     node: true,
   },
   extends: [
-    '@coc-boilerplate/eslint-config-coc',
+    '../eslint-base.js',
     'plugin:vue/vue3-recommended',
     '@vue/prettier',
     '@vue/typescript/recommended',
