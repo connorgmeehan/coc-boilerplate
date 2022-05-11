@@ -2,6 +2,10 @@
 
 This repo includes everything you need to build a static website, deploy it to AWS, and extend it with other AWS services.
 
+## Getting started
+
+TODO: Add getting started steps
+
 ## Commands
 
 - `yarn dev` to run a dev server
@@ -12,11 +16,6 @@ This repo includes everything you need to build a static website, deploy it to A
 ### TODO:
 - `yarn release` to build and deploy the project (to the production environment) (TODO)
 - `yarn remove:prod` Removes the production environment
-
-## Starting a new project
-
-
-
 
 ## Overview
 There are a few subfolders within this repo, some are project starters and others a examples of libs or config.  There's no harm in leaving libs in the project but you should delete any apps/project starters that you're not using.
