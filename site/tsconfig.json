@@ -1,20 +1,4 @@
 {
-  "extends": "../tsconfig.json",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "lib": ["DOM", "ESNext"],
-    "types": [
-      "vite/client",
-      "vite-plugin-pages",
-      "vite-plugin-pages/client",
-      "vite-plugin-vue-layouts/client"
-    ],
-    "paths": {
-      "~/*": ["src/*"],
-      "@/*": ["src/*"]
-
-    }
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+  // https://v3.nuxtjs.org/concepts/typescript
+  "extends": "./.nuxt/tsconfig.json"
 }
